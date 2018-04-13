@@ -1,3 +1,11 @@
+/**
+ * Adds a translation feature to the NS address form using Yandex Translation Service translate.yandex.com
+ *
+ * @author Felipe Chang <felipechang@hardcake.org>
+ *
+ * @NApiVersion 2.x
+ * @NModuleScope SameAccount
+ */
 define(["require", "exports", "N/https", "N/runtime"], function (require, exports, https_1, runtime_1) {
     Object.defineProperty(exports, "__esModule", { value: true });
     /**

@@ -1,3 +1,12 @@
+/**
+ * Adds a translation feature to the NS address form using Yandex Translation Service translate.yandex.com
+ *
+ * @author Felipe Chang <felipechang@hardcake.org>
+ *
+ * @NApiVersion 2.x
+ * @NModuleScope SameAccount
+ */
+
 import {get} from "N/https";
 import {getCurrentScript} from "N/runtime";
 
