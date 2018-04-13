@@ -48,6 +48,10 @@ require([
             "estas"
         ]);
         //=> ["hello","as","these"]
+
+        yandex.setBaseLanguage("fr");
+        //=> Will now translate to french
+
     });
 
 ```
