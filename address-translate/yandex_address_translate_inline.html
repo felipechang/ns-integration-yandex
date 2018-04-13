@@ -1,0 +1,40 @@
+<script type="application/javascript">
+    function yandexTranslate() {
+        require([
+                "N/currentRecord",
+                "/SuiteScripts/Yandex/yandex_translate_lib"
+            ],
+
+            function (currentRecord, Yandex) {
+
+                //Use script parameter or Yandex API key
+                var yandex = new Yandex.AddKey("custscript_yandex_key");
+
+                //Get record
+                var record = currentRecord.get();
+
+                //Translate fields
+                var res = yandex.translate([
+                    record.getValue({fieldId: "addressee"}),
+                    record.getValue({fieldId: "addr1"}),
+                    record.getValue({fieldId: "addr2"}),
+                    record.getValue({fieldId: "city"})
+                ]);
+
+                //Set translated values
+                if (res[0]) {
+                    record.setValue({fieldId: "addressee", value: res[0]});
+                }
+                if (res[1]) {
+                    record.setValue({fieldId: "addr1", value: res[1]});
+                }
+                if (res[2]) {
+                    record.setValue({fieldId: "addr2", value: res[2]});
+                }
+                if (res[3]) {
+                    record.setValue({fieldId: "city", value: res[3]});
+                }
+            });
+    }
+</script>
+<button type=button onclick="yandexTranslate()">Translate</button>
